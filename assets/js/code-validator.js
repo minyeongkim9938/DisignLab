@@ -19,8 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // 코드 타입 변경
     codeTypeButtons.forEach(btn => {
         btn.addEventListener('click', function() {
-            codeTypeButtons.forEach(b => b.classList.remove('active'));
+            codeTypeButtons.forEach(b => {
+                b.classList.remove('active');
+                b.setAttribute('aria-pressed', 'false');
+            });
             this.classList.add('active');
+            this.setAttribute('aria-pressed', 'true');
             currentType = this.dataset.type;
             
             // 제목 변경
@@ -29,22 +33,52 @@ document.addEventListener('DOMContentLoaded', function() {
                 'css': 'CSS 코드',
                 'ts': 'TypeScript 코드'
             };
-            codeTypeTitle.textContent = titles[currentType];
+            if (codeTypeTitle) {
+                codeTypeTitle.textContent = titles[currentType];
+            }
             
-            // placeholder 변경
-            const placeholders = {
-                'html': '<!DOCTYPE html>\n<html>\n  <head>...</head>\n  <body>...</body>\n</html>',
-                'css': 'body {\n  margin: 0;\n  padding: 0;\n}',
-                'ts': 'function example(): void {\n  console.log("Hello");\n}'
-            };
-            codeInput.placeholder = placeholders[currentType];
-            
-            // 입력 필드 초기화
-            codeInput.value = '';
-            
-            // 결과 영역 숨기기
-            resultSection.style.display = 'none';
-            formatSection.style.display = 'none';
+            // TypeScript 탭인 경우 특별 처리
+            if (currentType === 'ts') {
+                // 입력 필드에 "점검중" 텍스트 추가 및 비활성화
+                codeInput.value = '점검중';
+                codeInput.disabled = true;
+                codeInput.placeholder = '';
+                codeInput.setAttribute('aria-label', 'TypeScript 코드 입력 영역 (점검중)');
+                
+                // 버튼 비활성화
+                validateBtn.disabled = true;
+                formatBtn.disabled = true;
+                validateBtn.setAttribute('aria-label', '코드 검증하기 (비활성화: 점검중)');
+                formatBtn.setAttribute('aria-label', '코드 포맷팅 (비활성화: 점검중)');
+                
+                // 결과 영역 숨기기
+                resultSection.style.display = 'none';
+                formatSection.style.display = 'none';
+            } else {
+                // HTML, CSS 탭인 경우 정상 동작
+                codeInput.disabled = false;
+                codeInput.setAttribute('aria-label', '코드 입력 영역');
+                
+                // placeholder 변경
+                const placeholders = {
+                    'html': '<!DOCTYPE html>\n<html>\n  <head>...</head>\n  <body>...</body>\n</html>',
+                    'css': 'body {\n  margin: 0;\n  padding: 0;\n}'
+                };
+                codeInput.placeholder = placeholders[currentType];
+                
+                // 입력 필드 초기화
+                codeInput.value = '';
+                
+                // 버튼 활성화
+                validateBtn.disabled = false;
+                formatBtn.disabled = false;
+                validateBtn.setAttribute('aria-label', '코드 검증하기');
+                formatBtn.setAttribute('aria-label', '코드 포맷팅');
+                
+                // 결과 영역 숨기기
+                resultSection.style.display = 'none';
+                formatSection.style.display = 'none';
+            }
         });
     });
 
@@ -992,6 +1026,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 검증 버튼 클릭
     validateBtn.addEventListener('click', function() {
+        // TypeScript 탭인 경우 비활성화
+        if (currentType === 'ts' || validateBtn.disabled) {
+            return;
+        }
+        
         const code = codeInput.value;
         let result;
         
@@ -1008,6 +1047,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 포맷팅 버튼 클릭
     formatBtn.addEventListener('click', function() {
+        // TypeScript 탭인 경우 비활성화
+        if (currentType === 'ts' || formatBtn.disabled) {
+            return;
+        }
+        
         const code = codeInput.value;
         const formatted = formatCode(code, currentType);
         
@@ -1019,6 +1063,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 지우기 버튼 클릭
     clearBtn.addEventListener('click', function() {
+        // TypeScript 탭인 경우 "점검중" 텍스트 유지
+        if (currentType === 'ts') {
+            codeInput.value = '점검중';
+            return;
+        }
         codeInput.value = '';
         resultSection.style.display = 'none';
         formatSection.style.display = 'none';

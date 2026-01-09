@@ -1356,6 +1356,10 @@ main {
     transition: all 0.3s ease;
     text-decoration: none;
     display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .btn-primary {

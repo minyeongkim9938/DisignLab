@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Netlify가 폼을 자동으로 처리하므로 JavaScript는 폼 제출을 방해하지 않음
     // 오직 UI 기능(글자 수 카운트, 성공 메시지)만 처리
     
+    const contactForm = document.getElementById('contactForm');
     const contactMessage = document.getElementById('contactMessage');
     const charCount = document.getElementById('charCount');
     const formMessage = document.getElementById('formMessage');
@@ -25,6 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Netlify가 폼을 자동으로 처리하므로 JavaScript는 폼 제출을 방해하지 않음
+    // 예시 코드와 동일하게 단순하게 유지
 
     // URL 파라미터로 성공/실패 메시지 확인 (Netlify가 리다이렉트 후 표시)
     const urlParams = new URLSearchParams(window.location.search);

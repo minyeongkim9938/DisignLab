@@ -203,6 +203,7 @@ function initNav() {
                     if (navToggle) {
                         navToggle.classList.remove('active');
                     }
+                    document.body.classList.remove('menu-open');
                 }
                 
                 // 활성 링크 업데이트
@@ -253,13 +254,25 @@ function initNav() {
         if (navToggle && navMenu && !navToggle.contains(e.target) && !navMenu.contains(e.target)) {
             navMenu.classList.remove('active');
             navToggle.classList.remove('active');
+            if (window.innerWidth <= 900) {
+                document.body.classList.remove('menu-open');
+            }
         }
     });
 
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
+            const isActive = navMenu.classList.toggle('active');
             navToggle.classList.toggle('active');
+            
+            // 모바일에서 메뉴가 열릴 때 body 스크롤 방지
+            if (window.innerWidth <= 900) {
+                if (isActive) {
+                    document.body.classList.add('menu-open');
+                } else {
+                    document.body.classList.remove('menu-open');
+                }
+            }
         });
 
         // 메뉴 링크 클릭 시 모바일 메뉴 닫기
@@ -268,6 +281,9 @@ function initNav() {
                 link.addEventListener('click', () => {
                     navMenu.classList.remove('active');
                     navToggle.classList.remove('active');
+                    if (window.innerWidth <= 900) {
+                        document.body.classList.remove('menu-open');
+                    }
                     
                     // 활성 링크 업데이트 (드롭다운 토글 포함)
                     document.querySelectorAll('.nav-link, .dropdown-item').forEach(l => l.classList.remove('active'));

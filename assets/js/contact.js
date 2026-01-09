@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 폼 제출 처리 (Netlify 폼)
+    // Netlify가 기본적으로 폼을 처리하므로 JavaScript는 최소한으로 개입
     if (contactForm) {
         const submitButton = contactForm.querySelector('button[type="submit"]');
         let originalButtonText = '문의하기';
@@ -37,40 +38,32 @@ document.addEventListener('DOMContentLoaded', function() {
             originalButtonText = submitButton.textContent;
         }
 
+        // 폼 제출 처리 - Netlify가 자동으로 처리하도록 함
+        // HTML5 validation이 먼저 실행되므로 여기서는 로딩 상태만 관리
         contactForm.addEventListener('submit', function(e) {
-            // HTML5 validation이 먼저 실행되므로 여기서는 추가 검증만 수행
-            const messageEl = document.getElementById('contactMessage');
-            const message = messageEl ? messageEl.value.trim() : '';
-
-            // 추가 유효성 검사 (HTML5 validation 통과 후)
-            if (message.length > 0 && message.length < 10) {
-                e.preventDefault();
-                showMessage('문의 내용은 최소 10자 이상 입력해주세요.', 'error');
-                // 버튼 상태 복원
-                if (submitButton) {
-                    submitButton.disabled = false;
-                    submitButton.textContent = originalButtonText;
-                }
-                return false;
+            // HTML5 validation이 통과했는지 확인
+            if (!contactForm.checkValidity()) {
+                // HTML5 validation 실패 시 브라우저 기본 동작 허용
+                return true;
             }
 
-            // 모든 검증 통과 시 Netlify가 폼을 제출하도록 허용
-            // 로딩 상태 표시
+            // 모든 검증 통과 시 로딩 상태만 표시
+            // Netlify가 폼을 자동으로 처리하므로 preventDefault()를 호출하지 않음
             if (submitButton) {
                 submitButton.disabled = true;
                 submitButton.textContent = '전송 중...';
+                
                 // 폼 제출이 완료되지 않는 경우를 대비해 타임아웃 설정
                 setTimeout(function() {
-                    if (submitButton.disabled) {
+                    if (submitButton && submitButton.disabled) {
                         submitButton.disabled = false;
                         submitButton.textContent = originalButtonText;
                     }
-                }, 10000);
+                }, 15000);
             }
             
-            // Netlify 폼이 자동으로 제출됨
+            // Netlify가 자동으로 폼을 처리함
             // preventDefault()를 호출하지 않으므로 폼이 정상적으로 제출됨
-            return true;
         });
     }
 

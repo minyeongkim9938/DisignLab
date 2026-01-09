@@ -29,11 +29,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 폼 제출 처리
+    // 폼 제출 처리 (Netlify 폼)
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
             const name = document.getElementById('contactName').value.trim();
             const email = document.getElementById('contactEmail').value.trim();
             const subject = document.getElementById('contactSubject').value.trim();
@@ -41,35 +39,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // 유효성 검사
             if (!name || !email || !subject || !message) {
+                e.preventDefault();
                 showMessage('모든 필수 항목을 입력해주세요.', 'error');
                 return;
             }
 
             if (!isValidEmail(email)) {
+                e.preventDefault();
                 showMessage('올바른 이메일 주소를 입력해주세요.', 'error');
                 return;
             }
 
             if (message.length < 10) {
+                e.preventDefault();
                 showMessage('문의 내용은 최소 10자 이상 입력해주세요.', 'error');
                 return;
             }
 
-            // 메일 링크 생성 (실제 서버가 없는 경우)
-            const mailtoLink = `mailto:${footerData.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`이름: ${name}\n이메일: ${email}\n\n${message}`)}`;
-            
-            // 메일 클라이언트 열기
-            window.location.href = mailtoLink;
-            
-            // 성공 메시지 표시
-            showMessage('문의사항이 전송되었습니다. 메일 클라이언트에서 이메일을 확인해주세요.', 'success');
-            
-            // 폼 초기화 (약간의 지연 후)
-            setTimeout(() => {
-                contactForm.reset();
-                if (charCount) charCount.textContent = '0';
-            }, 2000);
+            // Netlify 폼이 제출되면 성공 메시지 표시
+            // 제출 후 URL에 hash가 추가되거나 리다이렉트가 발생할 수 있음
         });
+    }
+
+    // URL 파라미터로 성공/실패 메시지 확인
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+        showMessage('문의사항이 성공적으로 전송되었습니다. 빠른 시일 내에 답변 드리겠습니다.', 'success');
+        // URL 정리
+        window.history.replaceState({}, document.title, window.location.pathname);
+    } else if (urlParams.get('success') === 'false') {
+        showMessage('문의사항 전송 중 오류가 발생했습니다. 다시 시도해주세요.', 'error');
+        window.history.replaceState({}, document.title, window.location.pathname);
     }
 
     // 이메일 유효성 검사

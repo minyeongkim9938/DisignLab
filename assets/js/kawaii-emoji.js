@@ -279,7 +279,11 @@ function createCategoryButtons() {
             displayEmojis(kawaiiCategories[categoryKey].emojis);
         });
         
-        categoryGrid.appendChild(button);
+        // 목록 아이템으로 감싸기
+        const listItem = document.createElement('li');
+        listItem.setAttribute('role', 'listitem');
+        listItem.appendChild(button);
+        categoryGrid.appendChild(listItem);
     });
 }
 
@@ -297,11 +301,27 @@ function displayEmojis(emojis) {
         emojiItem.textContent = emoji;
         emojiItem.title = emoji;
         
+        emojiItem.setAttribute('role', 'button');
+        emojiItem.setAttribute('tabindex', '0');
+        emojiItem.setAttribute('aria-label', `카와이 이모티콘 복사: ${emoji}`);
+        
         emojiItem.addEventListener('click', () => {
             copyEmoji(emoji);
         });
         
-        emojiGrid.appendChild(emojiItem);
+        // 키보드 접근성 추가
+        emojiItem.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                copyEmoji(emoji);
+            }
+        });
+        
+        // 목록 아이템으로 감싸기
+        const listItem = document.createElement('li');
+        listItem.setAttribute('role', 'listitem');
+        listItem.appendChild(emojiItem);
+        emojiGrid.appendChild(listItem);
     });
 }
 

@@ -86,25 +86,32 @@ function createCategoryButtons() {
     
     categories.forEach((categoryKey, index) => {
         const category = emojiCategories[categoryKey];
+        const listItem = document.createElement('li');
+        
         const button = document.createElement('button');
         button.className = 'btn btn-preset font-style-btn';
         if (index === 0) button.classList.add('active');
         button.dataset.category = categoryKey;
         button.textContent = category.name;
+        button.setAttribute('aria-label', `${category.name} 카테고리 선택`);
+        button.setAttribute('aria-pressed', index === 0 ? 'true' : 'false');
         
         button.addEventListener('click', () => {
             // 활성화 상태 업데이트
             document.querySelectorAll('.font-style-btn').forEach(btn => {
                 btn.classList.remove('active');
+                btn.setAttribute('aria-pressed', 'false');
             });
             button.classList.add('active');
+            button.setAttribute('aria-pressed', 'true');
             
             currentCategory = categoryKey;
             searchInput.value = '';
             displayEmojis(emojiCategories[categoryKey].emojis);
         });
         
-        categoryGrid.appendChild(button);
+        listItem.appendChild(button);
+        categoryGrid.appendChild(listItem);
     });
 }
 
@@ -115,16 +122,29 @@ function displayEmojis(emojis) {
     emojiCount.textContent = `${emojis.length}개`;
     
     emojis.forEach(emoji => {
+        const listItem = document.createElement('li');
+        
         const emojiItem = document.createElement('div');
         emojiItem.className = 'emoji-item';
         emojiItem.textContent = emoji;
+        emojiItem.setAttribute('role', 'button');
+        emojiItem.setAttribute('tabindex', '0');
+        emojiItem.setAttribute('aria-label', `이모지 ${emoji} 클릭하여 복사`);
         emojiItem.title = emoji;
         
         emojiItem.addEventListener('click', () => {
             copyEmoji(emoji);
         });
         
-        emojiGrid.appendChild(emojiItem);
+        emojiItem.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                copyEmoji(emoji);
+            }
+        });
+        
+        listItem.appendChild(emojiItem);
+        emojiGrid.appendChild(listItem);
     });
 }
 

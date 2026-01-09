@@ -3,9 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>반응형 미리보기 - 웹사이트 반응형 테스트 도구</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>반응형 미리보기 - 웹사이트 반응형 테스트 도구 | DesignLab</title>
+    <meta name="title" content="반응형 미리보기 - 웹사이트 반응형 테스트 도구 | DesignLab">
+    <meta name="description" content="웹사이트를 다양한 디바이스 크기에서 미리보고 테스트하는 무료 온라인 도구입니다. iPhone, iPad, Desktop 등 다양한 화면 크기로 웹사이트의 반응형 디자인을 확인할 수 있습니다.">
+    <meta name="keywords" content="반응형 미리보기, 반응형 테스트, 웹사이트 미리보기, 디바이스 테스트, 모바일 미리보기, 반응형 디자인 테스트, 웹사이트 테스트 도구, 모바일 반응형 확인, 반응형 웹 테스트">
+    <meta name="author" content="DesignLab">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Korean">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.designlab.co.kr/responsive-preview.html">
+    
+    <!-- Open Graph / Facebook / 구글 -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.designlab.co.kr/responsive-preview.html">
+    <meta property="og:title" content="반응형 미리보기 - 웹사이트 반응형 테스트 도구 | DesignLab">
+    <meta property="og:description" content="웹사이트를 다양한 디바이스 크기에서 미리보고 테스트하는 무료 온라인 도구입니다. iPhone, iPad, Desktop 등 다양한 화면 크기로 확인할 수 있습니다.">
+    <meta property="og:image" content="https://www.designlab.co.kr/assets/images/og-image-responsive.jpg">
+    <meta property="og:site_name" content="DesignLab">
+    <meta property="og:locale" content="ko_KR">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.designlab.co.kr/responsive-preview.html">
+    <meta name="twitter:title" content="반응형 미리보기 - 웹사이트 반응형 테스트 도구">
+    <meta name="twitter:description" content="웹사이트를 다양한 디바이스 크기에서 미리보고 테스트하는 무료 온라인 도구입니다.">
+    <meta name="twitter:image" content="https://www.designlab.co.kr/assets/images/og-image-responsive.jpg">
+    
+    <!-- 네이버 SEO -->
+    <meta name="naver-site-verification" content="">
+    <meta name="NaverBot" content="All">
+    <meta name="DaumBot" content="All">
+    
+    <!-- 빙(Bing) SEO -->
+    <meta name="msvalidate.01" content="">
+    
+    <!-- 구글 사이트 검증 -->
+    <meta name="google-site-verification" content="">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/converter.css">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "반응형 미리보기",
+      "description": "웹사이트를 다양한 디바이스 크기에서 미리보고 테스트하는 온라인 도구",
+      "url": "https://www.designlab.co.kr/responsive-preview.html",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "KRW"
+      },
+      "featureList": [
+        "다양한 디바이스 크기 선택",
+        "커스텀 크기 설정",
+        "실시간 미리보기",
+        "전체화면 모드",
+        "URL 입력 및 로드"
+      ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "반응형 미리보기 도구 사용 방법",
+      "description": "웹사이트를 다양한 디바이스 크기에서 미리보는 방법",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "URL 입력",
+          "text": "웹사이트 URL을 입력하고 로드 버튼을 클릭합니다.",
+          "position": 1
+        },
+        {
+          "@type": "HowToStep",
+          "name": "디바이스 크기 선택",
+          "text": "원하는 디바이스 크기 버튼을 클릭하거나 커스텀 크기를 설정합니다.",
+          "position": 2
+        },
+        {
+          "@type": "HowToStep",
+          "name": "미리보기 확인",
+          "text": "다양한 화면 크기에서 웹사이트의 반응형 디자인을 확인합니다.",
+          "position": 3
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- 공통 네비게이션 컴포넌트 -->
@@ -19,61 +117,90 @@
 
         <main>
             <!-- URL 입력 섹션 -->
-            <div class="settings-section">
-                <h3>웹사이트 URL 입력</h3>
-                <div class="url-input-group">
-                    <input type="text" id="urlInput" class="url-input" placeholder="https://example.com" value="">
-                    <button id="loadUrlBtn" class="btn btn-primary">로드</button>
+            <section class="settings-section" aria-labelledby="url-input">
+                <h3 id="url-input">웹사이트 URL 입력</h3>
+                <div class="url-input-group" role="group" aria-label="URL 입력">
+                    <label for="urlInput" class="sr-only">웹사이트 URL 입력</label>
+                    <input type="text" id="urlInput" class="url-input" placeholder="https://example.com" value="" aria-label="웹사이트 URL 입력" aria-describedby="url-hint">
+                    <button id="loadUrlBtn" class="btn btn-primary" aria-label="웹사이트 로드">로드</button>
                 </div>
-                <p class="url-hint">웹사이트 URL을 입력하고 로드 버튼을 클릭하세요</p>
-                <p class="url-hint warning-hint">⚠️ 일부 사이트는 보안 정책(X-Frame-Options, CSP 등)으로 인해 iframe에서 로드되지 않을 수 있습니다.</p>
-            </div>
+                <p id="url-hint" class="url-hint">웹사이트 URL을 입력하고 로드 버튼을 클릭하세요</p>
+                <p class="url-hint warning-hint" role="alert" aria-live="polite">⚠️ 일부 사이트는 보안 정책(X-Frame-Options, CSP 등)으로 인해 iframe에서 로드되지 않을 수 있습니다.</p>
+            </section>
 
             <!-- 디바이스 크기 선택 -->
-            <div class="settings-section">
-                <h3>디바이스 크기 선택</h3>
-                <div class="device-buttons">
-                    <button class="btn btn-preset device-btn active" data-width="375" data-height="667" data-name="iPhone SE">iPhone SE<br><small>375×667</small></button>
-                    <button class="btn btn-preset device-btn" data-width="390" data-height="844" data-name="iPhone 12/13">iPhone 12/13<br><small>390×844</small></button>
-                    <button class="btn btn-preset device-btn" data-width="414" data-height="896" data-name="iPhone 11 Pro Max">iPhone 11 Pro Max<br><small>414×896</small></button>
-                    <button class="btn btn-preset device-btn" data-width="768" data-height="1024" data-name="iPad">iPad<br><small>768×1024</small></button>
-                    <button class="btn btn-preset device-btn" data-width="1024" data-height="1366" data-name="iPad Pro">iPad Pro<br><small>1024×1366</small></button>
-                    <button class="btn btn-preset device-btn" data-width="1280" data-height="720" data-name="Desktop">Desktop<br><small>1280×720</small></button>
-                    <button class="btn btn-preset device-btn" data-width="1920" data-height="1080" data-name="Full HD">Full HD<br><small>1920×1080</small></button>
-                </div>
-            </div>
+            <section class="settings-section" aria-labelledby="device-sizes">
+                <h3 id="device-sizes">디바이스 크기 선택</h3>
+                <ul class="device-buttons" role="list" aria-label="디바이스 크기 선택 목록">
+                    <li>
+                        <button class="btn btn-preset device-btn active" data-width="375" data-height="667" data-name="iPhone SE" aria-label="iPhone SE 크기 (375×667) 선택" aria-pressed="true">
+                            iPhone SE<br><small aria-hidden="true">375×667</small>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn btn-preset device-btn" data-width="390" data-height="844" data-name="iPhone 12/13" aria-label="iPhone 12/13 크기 (390×844) 선택" aria-pressed="false">
+                            iPhone 12/13<br><small aria-hidden="true">390×844</small>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn btn-preset device-btn" data-width="414" data-height="896" data-name="iPhone 11 Pro Max" aria-label="iPhone 11 Pro Max 크기 (414×896) 선택" aria-pressed="false">
+                            iPhone 11 Pro Max<br><small aria-hidden="true">414×896</small>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn btn-preset device-btn" data-width="768" data-height="1024" data-name="iPad" aria-label="iPad 크기 (768×1024) 선택" aria-pressed="false">
+                            iPad<br><small aria-hidden="true">768×1024</small>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn btn-preset device-btn" data-width="1024" data-height="1366" data-name="iPad Pro" aria-label="iPad Pro 크기 (1024×1366) 선택" aria-pressed="false">
+                            iPad Pro<br><small aria-hidden="true">1024×1366</small>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn btn-preset device-btn" data-width="1280" data-height="720" data-name="Desktop" aria-label="Desktop 크기 (1280×720) 선택" aria-pressed="false">
+                            Desktop<br><small aria-hidden="true">1280×720</small>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="btn btn-preset device-btn" data-width="1920" data-height="1080" data-name="Full HD" aria-label="Full HD 크기 (1920×1080) 선택" aria-pressed="false">
+                            Full HD<br><small aria-hidden="true">1920×1080</small>
+                        </button>
+                    </li>
+                </ul>
+            </section>
 
             <!-- 커스텀 크기 -->
-            <div class="settings-section">
-                <h3>커스텀 크기</h3>
-                <div class="custom-size-controls">
+            <section class="settings-section" aria-labelledby="custom-size">
+                <h3 id="custom-size">커스텀 크기</h3>
+                <div class="custom-size-controls" role="group" aria-label="커스텀 크기 설정">
                     <div class="control-group">
-                        <label>너비 (px):</label>
-                        <input type="number" id="customWidth" class="size-input" value="1280" min="320" max="3840">
+                        <label for="customWidth">너비 (px):</label>
+                        <input type="number" id="customWidth" class="size-input" value="1280" min="320" max="3840" aria-label="커스텀 너비 입력">
                     </div>
                     <div class="control-group">
-                        <label>높이 (px):</label>
-                        <input type="number" id="customHeight" class="size-input" value="720" min="240" max="2160">
+                        <label for="customHeight">높이 (px):</label>
+                        <input type="number" id="customHeight" class="size-input" value="720" min="240" max="2160" aria-label="커스텀 높이 입력">
                     </div>
-                    <button id="applyCustomSize" class="btn btn-primary">적용</button>
+                    <button id="applyCustomSize" class="btn btn-primary" aria-label="커스텀 크기 적용">적용</button>
                 </div>
-            </div>
+            </section>
 
             <!-- 미리보기 영역 -->
-            <div class="preview-section">
+            <section class="preview-section" aria-labelledby="preview">
                 <div class="preview-header">
-                    <h3 id="deviceName">Desktop - 1280×720</h3>
-                    <div class="preview-controls">
-                        <button id="refreshBtn" class="btn btn-small">새로고침</button>
-                        <button id="fullscreenBtn" class="btn btn-small">전체화면</button>
+                    <h3 id="deviceName" aria-live="polite" aria-atomic="true">Desktop - 1280×720</h3>
+                    <div class="preview-controls" role="group" aria-label="미리보기 컨트롤">
+                        <button id="refreshBtn" class="btn btn-small" aria-label="미리보기 새로고침">새로고침</button>
+                        <button id="fullscreenBtn" class="btn btn-small" aria-label="전체화면 모드">전체화면</button>
                     </div>
                 </div>
-                <div class="preview-wrapper" id="previewWrapper">
-                    <div class="preview-container" id="previewContainer">
-                        <iframe id="previewFrame" src="about:blank" frameborder="0"></iframe>
+                <div class="preview-wrapper" id="previewWrapper" role="region" aria-label="웹사이트 미리보기 영역">
+                    <div class="preview-container" id="previewContainer" aria-label="미리보기 컨테이너">
+                        <iframe id="previewFrame" src="about:blank" frameborder="0" title="웹사이트 미리보기" aria-label="웹사이트 미리보기 프레임"></iframe>
                     </div>
                 </div>
-            </div>
+            </section>
         </main>
     </div>
 
@@ -85,4 +212,5 @@
     <script src="assets/js/responsive-preview.js"></script>
 </body>
 </html>
+
 

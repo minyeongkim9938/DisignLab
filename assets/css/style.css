@@ -14,6 +14,19 @@ body {
     padding-top: 70px; /* 네비게이션 높이만큼 여백 */
 }
 
+/* 스크린 리더 전용 텍스트 */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
 /* 반응형 네비게이션 메뉴 */
 .navbar {
     position: fixed;
@@ -562,6 +575,16 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     margin-top: 30px;
+    list-style: none;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.features-grid li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .feature-card {
@@ -604,6 +627,16 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     margin-top: 30px;
+    list-style: none;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.tools-list li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .tool-category {
@@ -642,6 +675,17 @@ main {
     left: 0;
     color: #59484F;
     font-weight: bold;
+}
+
+.tool-category ul li a {
+    color: #59484F;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.tool-category ul li a:hover {
+    color: #D9B4C8;
+    text-decoration: underline;
 }
 
 /* 사용 방법 단계 */
@@ -729,6 +773,14 @@ main {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 30px;
+    list-style: none;
+    padding: 0;
+}
+
+.services-grid li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .service-card {
@@ -795,6 +847,14 @@ main {
     gap: 8px;
     margin-bottom: 25px;
     justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.service-features li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .feature-tag {
@@ -865,6 +925,14 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 30px;
+    list-style: none;
+    padding: 0;
+}
+
+.contact-methods li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .contact-method-card {
@@ -1045,6 +1113,31 @@ main {
     border-left: 4px solid #59484F;
 }
 
+.response-time-info dl {
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+.response-time-info dt {
+    color: #59484F;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    margin-top: 12px;
+}
+
+.response-time-info dt:first-child {
+    margin-top: 0;
+}
+
+.response-time-info dd {
+    color: #59484F;
+    font-size: 1.05rem;
+    margin: 0 0 0 20px;
+    padding: 0;
+    line-height: 1.7;
+}
+
 .response-time-info p {
     color: #59484F;
     font-size: 1.05rem;
@@ -1164,6 +1257,37 @@ main {
     left: 0;
     color: #59484F;
     font-weight: bold;
+}
+
+.contact-info dl {
+    margin: 0;
+    padding: 0;
+}
+
+.contact-info dt {
+    font-weight: 600;
+    color: #59484F;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.contact-info dt:first-child {
+    margin-top: 0;
+}
+
+.contact-info dd {
+    color: #59484F;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+.contact-info dd a {
+    color: #59484F;
+    text-decoration: none;
+}
+
+.contact-info dd a:hover {
+    text-decoration: underline;
 }
 
 .back-link {
@@ -1320,20 +1444,27 @@ main {
     border: 1px solid #e9ecef;
 }
 
-.info-item {
+.image-info .info-item {
     display: flex;
     justify-content: space-between;
     padding: 8px 0;
     border-bottom: 1px solid #e9ecef;
 }
 
-.info-item:last-child {
+.image-info .info-item:last-child {
     border-bottom: none;
 }
 
-.info-item .label {
+.image-info .info-item dt.label {
     font-weight: 600;
     color: #59484F;
+    margin-right: 10px;
+}
+
+.image-info .info-item dd {
+    color: #59484F;
+    margin: 0;
+    padding: 0;
 }
 
 /* 컨트롤 영역 */
@@ -1419,6 +1550,15 @@ main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.preset-grid li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 /* 품질 컨트롤 */
@@ -1473,6 +1613,14 @@ main {
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
     margin-top: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+.tool-buttons-grid li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .btn-tool {
@@ -1902,6 +2050,16 @@ main {
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     margin-bottom: 40px;
+    list-style: none;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.pages-grid li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .page-card {
@@ -1950,10 +2108,11 @@ main {
 .category-title {
     font-size: 2rem;
     font-weight: 700;
-    color: white;
+    color: #59484F;
     margin-bottom: 30px;
     text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    padding-bottom: 15px;
+    border-bottom: 3px solid #D9B4C8;
 }
 
 @media (max-width: 900px) {

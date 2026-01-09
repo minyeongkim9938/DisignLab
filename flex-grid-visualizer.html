@@ -3,9 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flex/Grid 시각화 도구 - CSS 레이아웃 학습</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Flex/Grid 시각화 도구 - CSS Flexbox 및 Grid 레이아웃 학습 | DesignLab</title>
+    <meta name="title" content="Flex/Grid 시각화 도구 - CSS Flexbox 및 Grid 레이아웃 학습 | DesignLab">
+    <meta name="description" content="CSS Flexbox와 Grid 레이아웃을 시각적으로 테스트하고 학습하는 무료 온라인 도구입니다. 속성을 조절하여 실시간으로 레이아웃 변화를 확인하고 CSS 코드를 생성할 수 있습니다.">
+    <meta name="keywords" content="Flexbox 시각화, Grid 시각화, CSS Flexbox, CSS Grid, 레이아웃 학습, Flexbox 도구, Grid 도구, CSS 레이아웃, 웹 개발 도구, CSS 학습 도구, 레이아웃 테스트">
+    <meta name="author" content="DesignLab">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Korean">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.designlab.co.kr/flex-grid-visualizer.html">
+    
+    <!-- Open Graph / Facebook / 구글 -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.designlab.co.kr/flex-grid-visualizer.html">
+    <meta property="og:title" content="Flex/Grid 시각화 도구 - CSS Flexbox 및 Grid 레이아웃 학습 | DesignLab">
+    <meta property="og:description" content="CSS Flexbox와 Grid 레이아웃을 시각적으로 테스트하고 학습하는 무료 온라인 도구입니다.">
+    <meta property="og:image" content="https://www.designlab.co.kr/assets/images/og-image-flex-grid.jpg">
+    <meta property="og:site_name" content="DesignLab">
+    <meta property="og:locale" content="ko_KR">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.designlab.co.kr/flex-grid-visualizer.html">
+    <meta name="twitter:title" content="Flex/Grid 시각화 도구 - CSS Flexbox 및 Grid 레이아웃 학습">
+    <meta name="twitter:description" content="CSS Flexbox와 Grid 레이아웃을 시각적으로 테스트하고 학습하는 무료 온라인 도구입니다.">
+    <meta name="twitter:image" content="https://www.designlab.co.kr/assets/images/og-image-flex-grid.jpg">
+    
+    <!-- 네이버 SEO -->
+    <meta name="naver-site-verification" content="">
+    <meta name="NaverBot" content="All">
+    <meta name="DaumBot" content="All">
+    
+    <!-- 빙(Bing) SEO -->
+    <meta name="msvalidate.01" content="">
+    
+    <!-- 구글 사이트 검증 -->
+    <meta name="google-site-verification" content="">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/converter.css">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Flex/Grid 시각화 도구",
+      "description": "CSS Flexbox와 Grid 레이아웃을 시각적으로 테스트하고 학습하는 온라인 도구",
+      "url": "https://www.designlab.co.kr/flex-grid-visualizer.html",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "KRW"
+      },
+      "featureList": [
+        "Flexbox 시각화",
+        "Grid 시각화",
+        "실시간 미리보기",
+        "CSS 코드 생성",
+        "속성 조절",
+        "아이템 개수 조절",
+        "레이아웃 학습"
+      ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Flex/Grid 시각화 도구 사용 방법",
+      "description": "CSS Flexbox와 Grid 레이아웃을 시각적으로 테스트하는 방법",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "레이아웃 타입 선택",
+          "text": "Flexbox 또는 Grid 중 원하는 레이아웃 타입을 선택합니다.",
+          "position": 1
+        },
+        {
+          "@type": "HowToStep",
+          "name": "속성 조절",
+          "text": "각 속성 컨트롤을 조절하여 레이아웃을 변경합니다.",
+          "position": 2
+        },
+        {
+          "@type": "HowToStep",
+          "name": "미리보기 확인",
+          "text": "시각화 미리보기 영역에서 실시간으로 변경사항을 확인합니다.",
+          "position": 3
+        },
+        {
+          "@type": "HowToStep",
+          "name": "CSS 코드 확인",
+          "text": "생성된 CSS 코드를 확인하고 복사하여 프로젝트에 사용합니다.",
+          "position": 4
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- 공통 네비게이션 컴포넌트 -->
@@ -19,22 +125,22 @@
 
         <main>
             <!-- 레이아웃 타입 선택 -->
-            <div class="settings-section">
-                <h3>레이아웃 타입 선택</h3>
-                <div class="layout-type-buttons">
-                    <button class="btn btn-primary layout-type-btn active" data-type="flexbox">Flexbox</button>
-                    <button class="btn btn-secondary layout-type-btn" data-type="grid">Grid</button>
+            <section class="settings-section" aria-labelledby="layout-type">
+                <h3 id="layout-type">레이아웃 타입 선택</h3>
+                <div class="layout-type-buttons" role="group" aria-label="레이아웃 타입 선택">
+                    <button class="btn btn-primary layout-type-btn active" data-type="flexbox" aria-pressed="true" aria-label="Flexbox 레이아웃 선택">Flexbox</button>
+                    <button class="btn btn-secondary layout-type-btn" data-type="grid" aria-pressed="false" aria-label="Grid 레이아웃 선택">Grid</button>
                 </div>
-            </div>
+            </section>
 
             <!-- 컨트롤 패널 -->
-            <div class="settings-section" id="controlsSection">
-                <h3>속성 조절</h3>
-                <div id="flexControls" class="layout-controls">
+            <section class="settings-section" id="controlsSection" aria-labelledby="controls">
+                <h3 id="controls">속성 조절</h3>
+                <div id="flexControls" class="layout-controls" role="group" aria-label="Flexbox 속성 조절">
                     <!-- Flexbox 컨트롤 -->
                     <div class="control-group">
-                        <label>flex-direction:</label>
-                        <select id="flexDirection" class="format-select">
+                        <label for="flexDirection">flex-direction:</label>
+                        <select id="flexDirection" class="format-select" aria-label="Flexbox 주축 방향 선택">
                             <option value="row">row</option>
                             <option value="row-reverse">row-reverse</option>
                             <option value="column">column</option>
@@ -42,8 +148,8 @@
                         </select>
                     </div>
                     <div class="control-group">
-                        <label>justify-content:</label>
-                        <select id="justifyContent" class="format-select">
+                        <label for="justifyContent">justify-content:</label>
+                        <select id="justifyContent" class="format-select" aria-label="Flexbox 주축 정렬 선택">
                             <option value="flex-start">flex-start</option>
                             <option value="flex-end">flex-end</option>
                             <option value="center" selected>center</option>
@@ -53,8 +159,8 @@
                         </select>
                     </div>
                     <div class="control-group">
-                        <label>align-items:</label>
-                        <select id="alignItems" class="format-select">
+                        <label for="alignItems">align-items:</label>
+                        <select id="alignItems" class="format-select" aria-label="Flexbox 교차축 정렬 선택">
                             <option value="flex-start">flex-start</option>
                             <option value="flex-end">flex-end</option>
                             <option value="center" selected>center</option>
@@ -63,39 +169,39 @@
                         </select>
                     </div>
                     <div class="control-group">
-                        <label>flex-wrap:</label>
-                        <select id="flexWrap" class="format-select">
+                        <label for="flexWrap">flex-wrap:</label>
+                        <select id="flexWrap" class="format-select" aria-label="Flexbox 줄바꿈 선택">
                             <option value="nowrap" selected>nowrap</option>
                             <option value="wrap">wrap</option>
                             <option value="wrap-reverse">wrap-reverse</option>
                         </select>
                     </div>
                     <div class="control-group">
-                        <label>gap:</label>
-                        <input type="number" id="flexGap" value="10" min="0" max="50" class="format-select">
+                        <label for="flexGap">gap:</label>
+                        <input type="number" id="flexGap" value="10" min="0" max="50" class="format-select" aria-label="Flexbox 아이템 간격 입력">
                     </div>
                     <div class="control-group">
-                        <label>아이템 개수:</label>
-                        <input type="number" id="itemCount" value="6" min="1" max="20" class="format-select">
+                        <label for="itemCount">아이템 개수:</label>
+                        <input type="number" id="itemCount" value="6" min="1" max="20" class="format-select" aria-label="Flexbox 아이템 개수 입력">
                     </div>
                 </div>
                 <div class="item-update-section" id="flexUpdateSection">
-                    <button class="btn btn-primary" id="updateItemsBtn">아이템 업데이트</button>
+                    <button class="btn btn-primary" id="updateItemsBtn" aria-label="Flexbox 아이템 업데이트">아이템 업데이트</button>
                 </div>
 
-                <div id="gridControls" class="layout-controls" style="display: none;">
+                <div id="gridControls" class="layout-controls" style="display: none;" role="group" aria-label="Grid 속성 조절">
                     <!-- Grid 컨트롤 -->
                     <div class="control-group">
-                        <label>grid-template-columns:</label>
-                        <input type="text" id="gridColumns" value="1fr 1fr 1fr" placeholder="1fr 1fr 1fr" class="format-select">
+                        <label for="gridColumns">grid-template-columns:</label>
+                        <input type="text" id="gridColumns" value="1fr 1fr 1fr" placeholder="1fr 1fr 1fr" class="format-select" aria-label="Grid 열 크기 입력">
                     </div>
                     <div class="control-group">
-                        <label>grid-template-rows:</label>
-                        <input type="text" id="gridRows" value="1fr 1fr" placeholder="1fr 1fr" class="format-select">
+                        <label for="gridRows">grid-template-rows:</label>
+                        <input type="text" id="gridRows" value="1fr 1fr" placeholder="1fr 1fr" class="format-select" aria-label="Grid 행 크기 입력">
                     </div>
                     <div class="control-group">
-                        <label>justify-items:</label>
-                        <select id="gridJustifyItems" class="format-select">
+                        <label for="gridJustifyItems">justify-items:</label>
+                        <select id="gridJustifyItems" class="format-select" aria-label="Grid 가로 정렬 선택">
                             <option value="start">start</option>
                             <option value="end">end</option>
                             <option value="center" selected>center</option>
@@ -103,8 +209,8 @@
                         </select>
                     </div>
                     <div class="control-group">
-                        <label>align-items:</label>
-                        <select id="gridAlignItems" class="format-select">
+                        <label for="gridAlignItems">align-items:</label>
+                        <select id="gridAlignItems" class="format-select" aria-label="Grid 세로 정렬 선택">
                             <option value="start">start</option>
                             <option value="end">end</option>
                             <option value="center" selected>center</option>
@@ -112,78 +218,78 @@
                         </select>
                     </div>
                     <div class="control-group">
-                        <label>gap:</label>
-                        <input type="number" id="gridGap" value="10" min="0" max="50" class="format-select">
+                        <label for="gridGap">gap:</label>
+                        <input type="number" id="gridGap" value="10" min="0" max="50" class="format-select" aria-label="Grid 아이템 간격 입력">
                     </div>
                     <div class="control-group">
-                        <label>아이템 개수:</label>
-                        <input type="number" id="itemCountGrid" value="6" min="1" max="20" class="format-select">
+                        <label for="itemCountGrid">아이템 개수:</label>
+                        <input type="number" id="itemCountGrid" value="6" min="1" max="20" class="format-select" aria-label="Grid 아이템 개수 입력">
                     </div>
                 </div>
                 <div class="item-update-section" id="gridUpdateSection" style="display: none;">
-                    <button class="btn btn-primary" id="updateItemsBtnGrid">아이템 업데이트</button>
+                    <button class="btn btn-primary" id="updateItemsBtnGrid" aria-label="Grid 아이템 업데이트">아이템 업데이트</button>
                 </div>
-            </div>
+            </section>
 
             <!-- 시각화 영역 -->
-            <div class="visualizer-section">
+            <section class="visualizer-section" aria-labelledby="visualizer">
                 <div class="visualizer-header">
-                    <h3>시각화 미리보기</h3>
-                    <button class="btn btn-secondary btn-small" id="copyCodeBtn">CSS 코드 복사</button>
+                    <h3 id="visualizer">시각화 미리보기</h3>
+                    <button class="btn btn-secondary btn-small" id="copyCodeBtn" aria-label="CSS 코드 복사">CSS 코드 복사</button>
                 </div>
-                <div class="visualizer-container" id="visualizerContainer">
-                    <div class="visualizer-box" id="visualizerBox">
+                <div class="visualizer-container" id="visualizerContainer" role="region" aria-label="레이아웃 시각화 미리보기 영역">
+                    <div class="visualizer-box" id="visualizerBox" aria-label="레이아웃 시각화 박스">
                         <!-- 동적으로 아이템 생성 -->
                     </div>
                 </div>
-                <div class="css-code-section" id="cssCodeSection">
-                    <h4>생성된 CSS 코드:</h4>
-                    <pre id="cssCode"></pre>
+                <div class="css-code-section" id="cssCodeSection" aria-labelledby="css-code-title">
+                    <h4 id="css-code-title">생성된 CSS 코드:</h4>
+                    <pre id="cssCode" role="code" aria-label="생성된 CSS 코드"></pre>
                 </div>
-            </div>
+            </section>
         </main>
 
         <!-- 페이지 설명 섹션 -->
-        <section class="page-description">
+        <aside class="page-description" aria-label="사용법 안내">
             <div class="description-header">
                 <h2>📖 사용법 안내</h2>
-                <button class="toggle-btn" id="toggleDescription">
-                    <span class="toggle-icon">▼</span>
+                <button class="toggle-btn" id="toggleDescription" aria-expanded="true" aria-controls="descriptionContent" aria-label="사용법 안내 토글">
+                    <span class="toggle-icon" aria-hidden="true">▼</span>
                 </button>
             </div>
             <div class="description-content" id="descriptionContent">
-                <div class="description-section">
-                    <h3>🎯 주요 기능</h3>
-                    <ul>
+                <section class="description-section" aria-labelledby="features">
+                    <h3 id="features">🎯 주요 기능</h3>
+                    <ul role="list">
                         <li><strong>Flexbox 시각화:</strong> Flexbox 속성을 조절하여 레이아웃을 실시간으로 확인할 수 있습니다.</li>
                         <li><strong>Grid 시각화:</strong> CSS Grid 속성을 조절하여 그리드 레이아웃을 테스트할 수 있습니다.</li>
                         <li><strong>실시간 미리보기:</strong> 속성 변경 시 즉시 결과를 확인할 수 있습니다.</li>
                         <li><strong>CSS 코드 생성:</strong> 현재 설정에 해당하는 CSS 코드를 확인하고 복사할 수 있습니다.</li>
                         <li><strong>아이템 개수 조절:</strong> 원하는 개수의 아이템을 생성하여 테스트할 수 있습니다.</li>
                     </ul>
-                </div>
-                <div class="description-section">
-                    <h3>📝 Flexbox 속성 설명</h3>
-                    <ul>
+                </section>
+                <section class="description-section" aria-labelledby="flexbox-properties">
+                    <h3 id="flexbox-properties">📝 Flexbox 속성 설명</h3>
+                    <ul role="list">
                         <li><strong>flex-direction:</strong> 주축 방향을 설정합니다 (row, column 등)</li>
                         <li><strong>justify-content:</strong> 주축 방향의 정렬을 설정합니다</li>
                         <li><strong>align-items:</strong> 교차축 방향의 정렬을 설정합니다</li>
                         <li><strong>flex-wrap:</strong> 아이템의 줄바꿈을 설정합니다</li>
                         <li><strong>gap:</strong> 아이템 사이의 간격을 설정합니다</li>
                     </ul>
-                </div>
-                <div class="description-section">
-                    <h3>📝 Grid 속성 설명</h3>
-                    <ul>
+                </section>
+                <section class="description-section" aria-labelledby="grid-properties">
+                    <h3 id="grid-properties">📝 Grid 속성 설명</h3>
+                    <ul role="list">
                         <li><strong>grid-template-columns:</strong> 열의 크기를 정의합니다 (예: 1fr 1fr 1fr, repeat(3, 1fr))</li>
                         <li><strong>grid-template-rows:</strong> 행의 크기를 정의합니다</li>
                         <li><strong>justify-items:</strong> 그리드 아이템의 가로 정렬을 설정합니다</li>
                         <li><strong>align-items:</strong> 그리드 아이템의 세로 정렬을 설정합니다</li>
                         <li><strong>gap:</strong> 그리드 아이템 사이의 간격을 설정합니다</li>
                     </ul>
-                </div>
+                </section>
             </div>
-        </section>
+        </aside>
     </div>
 
     <!-- 공통 푸터 컴포넌트 -->

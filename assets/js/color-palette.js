@@ -266,9 +266,14 @@ function displayPalette(colors) {
         const rgb = hslToRgb(color.h, color.s, color.l);
         const hex = rgbToHex(rgb.r, rgb.g, rgb.b);
 
+        const listItem = document.createElement('li');
+        
         const colorItem = document.createElement('div');
         colorItem.className = 'palette-item';
         colorItem.style.backgroundColor = hex;
+        colorItem.setAttribute('role', 'button');
+        colorItem.setAttribute('tabindex', '0');
+        colorItem.setAttribute('aria-label', `색상 ${hex} - 클릭하여 HEX 코드 복사`);
 
         const colorInfo = document.createElement('div');
         colorInfo.className = 'palette-item-info';
@@ -276,17 +281,36 @@ function displayPalette(colors) {
         const hexCode = document.createElement('div');
         hexCode.className = 'color-code hex-code';
         hexCode.textContent = hex;
+        hexCode.setAttribute('role', 'button');
+        hexCode.setAttribute('tabindex', '0');
+        hexCode.setAttribute('aria-label', `HEX 코드 ${hex} 복사`);
         hexCode.onclick = () => copyToClipboard(hex);
+        hexCode.onkeydown = (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                copyToClipboard(hex);
+            }
+        };
 
         const rgbCode = document.createElement('div');
         rgbCode.className = 'color-code rgb-code';
         rgbCode.textContent = `RGB(${rgb.r}, ${rgb.g}, ${rgb.b})`;
+        rgbCode.setAttribute('role', 'button');
+        rgbCode.setAttribute('tabindex', '0');
+        rgbCode.setAttribute('aria-label', `RGB 코드 RGB(${rgb.r}, ${rgb.g}, ${rgb.b}) 복사`);
         rgbCode.onclick = () => copyToClipboard(`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`);
+        rgbCode.onkeydown = (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                copyToClipboard(`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`);
+            }
+        };
 
         colorInfo.appendChild(hexCode);
         colorInfo.appendChild(rgbCode);
         colorItem.appendChild(colorInfo);
-        paletteGrid.appendChild(colorItem);
+        listItem.appendChild(colorItem);
+        paletteGrid.appendChild(listItem);
     });
 }
 

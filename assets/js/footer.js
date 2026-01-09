@@ -15,6 +15,14 @@ const footerData = {
     contact: {
         email: 'lili9938@naver.com'
     },
+    socialLinks: {
+        instagram: 'https://www.instagram.com/designlab',
+        facebook: 'https://www.facebook.com/designlab',
+        youtube: 'https://www.youtube.com/designlab',
+        linkedin: 'https://www.linkedin.com/company/designlab',
+        twitter: 'https://twitter.com/designlab',
+        pinterest: 'https://www.pinterest.com/designlab'
+    },
     // 카테고리별 페이지 링크
     pageCategories: [
         {
@@ -110,6 +118,18 @@ function generateFooterHTML() {
                     </ul>
                 </div>
             </div>
+
+            <!-- 소셜 링크 (SEO용, 화면에서는 숨김) -->
+            <nav class="footer-social-links sr-only" aria-label="소셜 미디어 링크">
+                <ul role="list">
+                    <li><a href="${footerData.socialLinks.instagram}" rel="me noopener noreferrer" aria-label="인스타그램">Instagram</a></li>
+                    <li><a href="${footerData.socialLinks.facebook}" rel="me noopener noreferrer" aria-label="페이스북">Facebook</a></li>
+                    <li><a href="${footerData.socialLinks.youtube}" rel="me noopener noreferrer" aria-label="유튜브">YouTube</a></li>
+                    <li><a href="${footerData.socialLinks.linkedin}" rel="me noopener noreferrer" aria-label="링크드인">LinkedIn</a></li>
+                    <li><a href="${footerData.socialLinks.twitter}" rel="me noopener noreferrer" aria-label="트위터">Twitter</a></li>
+                    <li><a href="${footerData.socialLinks.pinterest}" rel="me noopener noreferrer" aria-label="핀터레스트">Pinterest</a></li>
+                </ul>
+            </nav>
 
             <!-- 저작권 정보 -->
             <div class="footer-bottom">

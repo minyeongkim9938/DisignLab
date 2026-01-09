@@ -379,7 +379,11 @@ function createFontStyleButtons() {
             transformText();
         });
         
-        fontStyleGrid.appendChild(button);
+        // 목록 아이템으로 감싸기
+        const listItem = document.createElement('li');
+        listItem.setAttribute('role', 'listitem');
+        listItem.appendChild(button);
+        fontStyleGrid.appendChild(listItem);
     });
 }
 

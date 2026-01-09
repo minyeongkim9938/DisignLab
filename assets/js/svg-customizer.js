@@ -131,8 +131,10 @@ function init() {
         const initialCount = Math.max(12, itemsPerRow * 4);
         
         presetIcons.forEach((icon, index) => {
-            const iconItem = document.createElement('div');
+            const iconItem = document.createElement('li');
             iconItem.className = 'svg-icon-item';
+            iconItem.setAttribute('role', 'listitem');
+            iconItem.setAttribute('aria-label', `${icon.name} 아이콘`);
             if (index >= initialCount) {
                 iconItem.style.display = 'none';
                 iconItem.classList.add('svg-icon-item-hidden');
@@ -140,6 +142,7 @@ function init() {
             
             const previewDiv = document.createElement('div');
             previewDiv.className = 'svg-icon-preview';
+            previewDiv.setAttribute('aria-hidden', 'true');
             previewDiv.innerHTML = icon.svg.replace('currentColor', '#667eea');
             
             const nameDiv = document.createElement('div');
@@ -148,16 +151,20 @@ function init() {
             
             const actionsDiv = document.createElement('div');
             actionsDiv.className = 'svg-icon-actions';
+            actionsDiv.setAttribute('role', 'group');
+            actionsDiv.setAttribute('aria-label', `${icon.name} 아이콘 액션`);
             
             const useBtn = document.createElement('button');
             useBtn.className = 'btn btn-primary btn-small use-icon-btn';
             useBtn.textContent = '사용';
             useBtn.dataset.index = index;
+            useBtn.setAttribute('aria-label', `${icon.name} 아이콘 사용`);
             
             const downloadBtn = document.createElement('button');
             downloadBtn.className = 'btn btn-secondary btn-small download-icon-btn';
             downloadBtn.textContent = '다운로드';
             downloadBtn.dataset.index = index;
+            downloadBtn.setAttribute('aria-label', `${icon.name} 아이콘 다운로드`);
             
             actionsDiv.appendChild(useBtn);
             actionsDiv.appendChild(downloadBtn);

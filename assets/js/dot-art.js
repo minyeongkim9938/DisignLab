@@ -197,6 +197,8 @@ function displayArts(arts) {
     artCount.textContent = `${uniqueArts.length}개`;
     
     uniqueArts.forEach(art => {
+        const listItem = document.createElement('li');
+        
         const artItem = document.createElement('div');
         artItem.className = 'emoji-item dot-art-item';
         artItem.style.fontFamily = 'monospace';
@@ -207,13 +209,24 @@ function displayArts(arts) {
         artItem.style.maxHeight = 'none';
         artItem.style.minHeight = '200px';
         artItem.textContent = art;
+        artItem.setAttribute('role', 'button');
+        artItem.setAttribute('tabindex', '0');
+        artItem.setAttribute('aria-label', '도트아트 클릭하여 복사');
         artItem.title = '클릭하여 복사';
         
         artItem.addEventListener('click', () => {
             copyArt(art);
         });
         
-        artGrid.appendChild(artItem);
+        artItem.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                copyArt(art);
+            }
+        });
+        
+        listItem.appendChild(artItem);
+        artGrid.appendChild(listItem);
     });
 }
 

@@ -152,9 +152,11 @@ function initNav() {
             if (isExpanded) {
                 descriptionContent.classList.remove('collapsed');
                 toggleDescription.classList.remove('active');
+                toggleDescription.setAttribute('aria-expanded', 'true');
             } else {
                 descriptionContent.classList.add('collapsed');
                 toggleDescription.classList.add('active');
+                toggleDescription.setAttribute('aria-expanded', 'false');
             }
         });
     }

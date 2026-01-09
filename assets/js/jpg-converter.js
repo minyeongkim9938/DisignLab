@@ -193,8 +193,11 @@ function updateFileList() {
     filesList.innerHTML = '';
 
     files.forEach(fileData => {
+        const listItem = document.createElement('li');
+        listItem.setAttribute('role', 'listitem');
         const fileItem = createFileItem(fileData);
-        filesList.appendChild(fileItem);
+        listItem.appendChild(fileItem);
+        filesList.appendChild(listItem);
     });
 
     updateBatchButtons();

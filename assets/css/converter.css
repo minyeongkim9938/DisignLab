@@ -86,6 +86,14 @@
     display: grid;
     gap: 15px;
     margin-bottom: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.files-list li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .file-item {
@@ -485,6 +493,15 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
     gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.quick-color-grid li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .quick-color-btn {
@@ -571,6 +588,15 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.palette-grid li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .palette-item {
@@ -896,6 +922,14 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     margin-top: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.result-grid li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .result-item {
@@ -978,6 +1012,13 @@
     background: white;
     border-radius: 8px;
     border: 2px solid #e9ecef;
+    list-style: none;
+}
+
+.guide-list li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .guide-item {
@@ -1184,11 +1225,20 @@
     gap: 15px;
     margin-bottom: 20px;
     flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+.effect-type-buttons li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    min-width: 150px;
 }
 
 .effect-type-btn {
-    flex: 1;
-    min-width: 150px;
+    width: 100%;
     padding: 12px 25px;
     font-size: 1rem;
     font-weight: 600;
@@ -1430,6 +1480,14 @@
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
     margin-top: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.svg-icons-grid li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .svg-icon-item {
@@ -1649,6 +1707,14 @@
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 10px;
     margin-top: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+.font-style-grid li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .font-style-btn {
@@ -1681,6 +1747,14 @@
     border: 1px solid #e9ecef;
     max-height: 600px;
     overflow-y: auto;
+    list-style: none;
+    margin: 0;
+}
+
+.emoji-grid li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .emoji-item {
@@ -1743,6 +1817,14 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
     padding: 20px;
+    list-style: none;
+    margin: 0;
+}
+
+.dot-art-grid li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .dot-art-item {
@@ -1887,6 +1969,14 @@
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 15px;
     margin-top: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+.device-buttons li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .device-btn {

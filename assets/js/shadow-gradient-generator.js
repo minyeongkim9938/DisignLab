@@ -63,16 +63,18 @@ function init() {
     function switchEffectType(type) {
         currentEffectType = type;
         
-        // 버튼 활성화 상태 변경
+        // 버튼 활성화 상태 변경 및 aria-pressed 업데이트
         effectTypeButtons.forEach(btn => {
             if (btn.dataset.type === type) {
                 btn.classList.add('active');
                 btn.classList.remove('btn-secondary');
                 btn.classList.add('btn-primary');
+                btn.setAttribute('aria-pressed', 'true');
             } else {
                 btn.classList.remove('active');
                 btn.classList.remove('btn-primary');
                 btn.classList.add('btn-secondary');
+                btn.setAttribute('aria-pressed', 'false');
             }
         });
 

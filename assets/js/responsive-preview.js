@@ -72,10 +72,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // 디바이스 버튼 클릭
     deviceButtons.forEach(btn => {
         btn.addEventListener('click', function() {
-            // 모든 버튼에서 active 제거
-            deviceButtons.forEach(b => b.classList.remove('active'));
-            // 클릭한 버튼에 active 추가
+            // 모든 버튼에서 active 제거 및 aria-pressed 업데이트
+            deviceButtons.forEach(b => {
+                b.classList.remove('active');
+                b.setAttribute('aria-pressed', 'false');
+            });
+            // 클릭한 버튼에 active 추가 및 aria-pressed 업데이트
             this.classList.add('active');
+            this.setAttribute('aria-pressed', 'true');
             
             const width = parseInt(this.dataset.width);
             const height = parseInt(this.dataset.height);
@@ -95,8 +99,11 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // 모든 디바이스 버튼에서 active 제거
-        deviceButtons.forEach(b => b.classList.remove('active'));
+        // 모든 디바이스 버튼에서 active 제거 및 aria-pressed 업데이트
+        deviceButtons.forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-pressed', 'false');
+        });
         
         changeDeviceSize(width, height, '커스텀');
     });

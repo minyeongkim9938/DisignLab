@@ -132,14 +132,19 @@ function init() {
 
         // 가이드라인 리스트 렌더링
         guides.forEach((guide, index) => {
+            const listItem = document.createElement('li');
+            
             const guideItem = document.createElement('div');
             guideItem.className = 'guide-item';
+            guideItem.setAttribute('role', 'listitem');
             guideItem.innerHTML = `
                 <span class="guide-position">${guide.position.toFixed(2)}px</span>
                 <span class="guide-label">${guide.label}</span>
-                <button class="btn-copy-guide" data-position="${guide.position.toFixed(2)}" title="복사">📋</button>
+                <button class="btn-copy-guide" data-position="${guide.position.toFixed(2)}" title="복사" aria-label="가이드라인 위치 ${guide.position.toFixed(2)}px 복사">📋</button>
             `;
-            guideList.appendChild(guideItem);
+            
+            listItem.appendChild(guideItem);
+            guideList.appendChild(listItem);
         });
 
         // 개별 복사 버튼 이벤트

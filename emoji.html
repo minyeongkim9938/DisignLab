@@ -3,9 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이모지 모음 - 이모지 검색 및 복사</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>이모지 모음 - 이모지 검색 및 복사 도구 | DesignLab</title>
+    <meta name="title" content="이모지 모음 - 이모지 검색 및 복사 도구 | DesignLab">
+    <meta name="description" content="다양한 이모지를 검색하고 클릭하여 복사할 수 있는 무료 온라인 도구입니다. 얼굴, 동물, 음식, 활동, 여행 등 카테고리별로 이모지를 탐색하고 소셜 미디어에서 사용하세요.">
+    <meta name="keywords" content="이모지, 이모지 모음, 이모지 검색, 이모지 복사, 이모지 도구, 이모티콘, 얼굴 이모지, 동물 이모지, 음식 이모지, 활동 이모지, 여행 이모지, 소셜 미디어 이모지">
+    <meta name="author" content="DesignLab">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Korean">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.designlab.co.kr/emoji.html">
+    
+    <!-- Open Graph / Facebook / 구글 -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.designlab.co.kr/emoji.html">
+    <meta property="og:title" content="이모지 모음 - 이모지 검색 및 복사 도구 | DesignLab">
+    <meta property="og:description" content="다양한 이모지를 검색하고 클릭하여 복사할 수 있는 무료 온라인 도구입니다.">
+    <meta property="og:image" content="https://www.designlab.co.kr/assets/images/og-image-emoji.jpg">
+    <meta property="og:site_name" content="DesignLab">
+    <meta property="og:locale" content="ko_KR">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.designlab.co.kr/emoji.html">
+    <meta name="twitter:title" content="이모지 모음 - 이모지 검색 및 복사 도구">
+    <meta name="twitter:description" content="다양한 이모지를 검색하고 클릭하여 복사할 수 있는 무료 온라인 도구입니다.">
+    <meta name="twitter:image" content="https://www.designlab.co.kr/assets/images/og-image-emoji.jpg">
+    
+    <!-- 네이버 SEO -->
+    <meta name="naver-site-verification" content="">
+    <meta name="NaverBot" content="All">
+    <meta name="DaumBot" content="All">
+    
+    <!-- 빙(Bing) SEO -->
+    <meta name="msvalidate.01" content="">
+    
+    <!-- 구글 사이트 검증 -->
+    <meta name="google-site-verification" content="">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/converter.css">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "이모지 모음",
+      "description": "다양한 이모지를 검색하고 클릭하여 복사할 수 있는 온라인 도구",
+      "url": "https://www.designlab.co.kr/emoji.html",
+      "applicationCategory": "EntertainmentApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "KRW"
+      },
+      "featureList": [
+        "카테고리별 이모지 탐색",
+        "이모지 검색 기능",
+        "클릭 복사 기능",
+        "다양한 카테고리 제공",
+        "소셜 미디어 사용 가능",
+        "메시지 앱 사용 가능"
+      ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "이모지 모음 사용 방법",
+      "description": "이모지를 검색하고 복사하는 방법",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "카테고리 선택",
+          "text": "원하는 카테고리를 클릭하여 해당 카테고리의 이모지를 확인합니다.",
+          "position": 1
+        },
+        {
+          "@type": "HowToStep",
+          "name": "이모지 검색",
+          "text": "검색창에 키워드를 입력하여 특정 이모지를 찾습니다.",
+          "position": 2
+        },
+        {
+          "@type": "HowToStep",
+          "name": "이모지 복사",
+          "text": "원하는 이모지를 클릭하면 자동으로 클립보드에 복사됩니다.",
+          "position": 3
+        },
+        {
+          "@type": "HowToStep",
+          "name": "이모지 사용",
+          "text": "복사된 이모지를 Instagram, Facebook, 메시지 등에 붙여넣어 사용합니다.",
+          "position": 4
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- 공통 네비게이션 컴포넌트 -->
@@ -19,74 +124,74 @@
 
         <main>
             <!-- 검색 영역 -->
-            <div class="settings-section">
-                <h3>이모지 검색</h3>
-                <input type="text" id="searchInput" class="css-textarea" placeholder="이모지를 검색하세요..." style="padding: 15px; min-height: auto; resize: none;">
-            </div>
+            <section class="settings-section" aria-labelledby="emoji-search">
+                <h3 id="emoji-search">이모지 검색</h3>
+                <input type="text" id="searchInput" class="css-textarea" placeholder="이모지를 검색하세요..." style="padding: 15px; min-height: auto; resize: none;" aria-label="이모지 검색 입력">
+            </section>
 
             <!-- 카테고리 선택 -->
-            <div class="settings-section">
-                <h3>카테고리</h3>
-                <div class="font-style-grid" id="categoryGrid">
+            <section class="settings-section" aria-labelledby="emoji-category">
+                <h3 id="emoji-category">카테고리</h3>
+                <ul class="font-style-grid" id="categoryGrid" role="list" aria-label="이모지 카테고리 목록">
                     <!-- 동적으로 생성됨 -->
-                </div>
-            </div>
+                </ul>
+            </section>
 
             <!-- 이모지 표시 영역 -->
-            <div class="settings-section">
+            <section class="settings-section" aria-labelledby="emoji-list">
                 <div class="css-code-header">
-                    <h3>이모지</h3>
-                    <span id="emojiCount" style="color: #667eea; font-weight: 500;">0개</span>
+                    <h3 id="emoji-list">이모지</h3>
+                    <span id="emojiCount" style="color: #667eea; font-weight: 500;" aria-live="polite" aria-atomic="true">0개</span>
                 </div>
-                <div id="emojiGrid" class="emoji-grid">
+                <ul id="emojiGrid" class="emoji-grid" role="list" aria-label="이모지 목록">
                     <!-- 동적으로 생성됨 -->
-                </div>
-            </div>
+                </ul>
+            </section>
 
             <!-- 복사 알림 -->
-            <div id="copyToast" class="copy-toast" style="display: none;">
+            <div id="copyToast" class="copy-toast" style="display: none;" role="alert" aria-live="polite" aria-atomic="true">
                 <span id="copyToastText">복사되었습니다!</span>
             </div>
         </main>
 
         <!-- 페이지 설명 섹션 -->
-        <section class="page-description">
+        <aside class="page-description" aria-label="사용법 안내">
             <div class="description-header">
                 <h2>📖 사용법 안내</h2>
-                <button class="toggle-btn" id="toggleDescription">
-                    <span class="toggle-icon">▼</span>
+                <button class="toggle-btn" id="toggleDescription" aria-expanded="true" aria-controls="descriptionContent" aria-label="사용법 안내 토글">
+                    <span class="toggle-icon" aria-hidden="true">▼</span>
                 </button>
             </div>
             <div class="description-content" id="descriptionContent">
-                <div class="description-section">
-                    <h3>🎯 주요 기능</h3>
-                    <ul>
+                <section class="description-section" aria-labelledby="features">
+                    <h3 id="features">🎯 주요 기능</h3>
+                    <ul role="list">
                         <li><strong>카테고리별 탐색:</strong> 얼굴, 동물, 음식, 활동, 여행 등 다양한 카테고리로 이모지를 찾을 수 있습니다.</li>
                         <li><strong>검색 기능:</strong> 키워드로 원하는 이모지를 빠르게 검색할 수 있습니다.</li>
                         <li><strong>클릭 복사:</strong> 이모지를 클릭하면 자동으로 클립보드에 복사됩니다.</li>
                         <li><strong>다양한 이모지:</strong> 수백 가지의 이모지를 제공합니다.</li>
                     </ul>
-                </div>
-                <div class="description-section">
-                    <h3>📝 사용 방법</h3>
-                    <ol>
+                </section>
+                <section class="description-section" aria-labelledby="usage">
+                    <h3 id="usage">📝 사용 방법</h3>
+                    <ol role="list">
                         <li><strong>카테고리 선택:</strong> 원하는 카테고리를 클릭하여 해당 카테고리의 이모지를 확인합니다.</li>
                         <li><strong>검색:</strong> 검색창에 키워드를 입력하여 특정 이모지를 찾습니다.</li>
                         <li><strong>복사:</strong> 원하는 이모지를 클릭하면 자동으로 클립보드에 복사됩니다.</li>
                         <li><strong>사용:</strong> 복사된 이모지를 Instagram, Facebook, 메시지 등에 붙여넣어 사용합니다.</li>
                     </ol>
-                </div>
-                <div class="description-section">
-                    <h3>💡 팁</h3>
-                    <ul>
+                </section>
+                <section class="description-section" aria-labelledby="tips">
+                    <h3 id="tips">💡 팁</h3>
+                    <ul role="list">
                         <li>이모지를 클릭하면 "복사되었습니다!" 메시지가 표시됩니다.</li>
                         <li>검색어로 이모지의 이름이나 설명을 검색할 수 있습니다.</li>
                         <li>여러 카테고리를 탐색하여 다양한 이모지를 찾아보세요.</li>
                         <li>복사된 이모지는 모든 소셜 미디어 및 메시지 앱에서 사용할 수 있습니다.</li>
                     </ul>
-                </div>
+                </section>
             </div>
-        </section>
+        </aside>
     </div>
 
     <!-- 공통 푸터 컴포넌트 -->

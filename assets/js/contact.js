@@ -31,33 +31,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 폼 제출 처리 (Netlify 폼)
     if (contactForm) {
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton ? submitButton.textContent : '문의하기';
+
         contactForm.addEventListener('submit', function(e) {
-            const name = document.getElementById('contactName').value.trim();
-            const email = document.getElementById('contactEmail').value.trim();
-            const subject = document.getElementById('contactSubject').value.trim();
             const message = document.getElementById('contactMessage').value.trim();
 
-            // 유효성 검사
-            if (!name || !email || !subject || !message) {
-                e.preventDefault();
-                showMessage('모든 필수 항목을 입력해주세요.', 'error');
-                return;
-            }
-
-            if (!isValidEmail(email)) {
-                e.preventDefault();
-                showMessage('올바른 이메일 주소를 입력해주세요.', 'error');
-                return;
-            }
-
+            // 추가 유효성 검사 (HTML5 validation 통과 후)
             if (message.length < 10) {
                 e.preventDefault();
                 showMessage('문의 내용은 최소 10자 이상 입력해주세요.', 'error');
-                return;
+                // 버튼 상태 복원
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalButtonText;
+                }
+                return false;
             }
 
-            // Netlify 폼이 제출되면 성공 메시지 표시
-            // 제출 후 URL에 hash가 추가되거나 리다이렉트가 발생할 수 있음
+            // 모든 검증 통과 시 Netlify가 폼을 제출하도록 허용
+            // 로딩 상태 표시
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.textContent = '전송 중...';
+            }
+            
+            // Netlify 폼이 자동으로 제출됨
+            // preventDefault()를 호출하지 않으므로 폼이 정상적으로 제출됨
         });
     }
 
